@@ -2,7 +2,7 @@ class TripsController < ApplicationController
   def index
     trips = Trip.all
     # if trips
-      render json: trips.as_json(only: [:id, :date, :departure_time, :driver_id, :car_id, :passenger_id]), status: :ok
+      render json: trips.as_json(only: [:id, :date, :departure_time, :driver_id, :car_id]), status: :ok
     # else
     #   render status: :not_found, json: { error: "Could not find a trip with id: #{trip.id}."}
     # end
