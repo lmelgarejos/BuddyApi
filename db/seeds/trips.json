@@ -1,0 +1,9 @@
+[
+  {
+    "date": "Today",
+    "departure_time": "NOW",
+    "driver_id": 1,
+    "car_id": 1,
+    "passenger_id": 1
+  }
+]

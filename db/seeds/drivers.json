@@ -1,0 +1,38 @@
+[
+{
+"username": "ShelleyRocha",
+"first_name": "Shelley",
+"last_name": "Rocha",
+"home_address": "1221 1st avenue",
+"home_zip_code": "98101",
+"work_address": "1301 SW 16th St",
+"work_zip_code": "98057",
+"license_number": "243038299",
+"email": "fulanito123@gmail.com",
+"phone_number": "3225108695"
+},
+{
+"username": "CurranStout",
+"first_name": "Curran",
+"last_name": "Stout",
+"home_address": "1221 1st avenue",
+"home_zip_code": "98101",
+"work_address": "1301 SW 16th St",
+"work_zip_code": "98057",
+"license_number": "243071299",
+"email": "fulanito1234@gmail.com",
+"phone_number": "3215118695"
+},
+{
+"username": "RoannaRobinson",
+"first_name": "Roanna",
+"last_name": "Robinson",
+"home_address": "325 5th Ave N",
+"home_zip_code": "98109",
+"work_address": "1301 SW 16th St",
+"work_zip_code": "98057",
+"license_number": "803038299",
+"email": "fulanito3@gmail.com",
+"phone_number": "768695"
+}
+]

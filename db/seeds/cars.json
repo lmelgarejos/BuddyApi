@@ -1,0 +1,12 @@
+[
+  {
+    "available_seats": "1",
+    "model": "Prius",
+    "driver_id": 1
+  },
+  {
+  "available_seats": "1",
+  "model": "Mazda",
+  "driver_id": 1
+}
+]

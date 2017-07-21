@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date: MyString
+  departure_time: MyString
+  rating: 1
+
+two:
+  date: MyString
+  departure_time: MyString
+  rating: 1
