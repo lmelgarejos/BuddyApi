@@ -22,7 +22,7 @@ class TripsController < ApplicationController
     if trip
       render json: trip.as_json(), status: :ok
     else
-      render status: :not_found, json: { error: "Could not find this trip!"}
+      render status: :not_found, json: { error: "Could not find this trip"}
     end
   end
 

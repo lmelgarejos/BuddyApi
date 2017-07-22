@@ -12,6 +12,8 @@ class CreateDrivers < ActiveRecord::Migration[5.1]
       t.string :email
       t.integer :phone_number
 
+      t.belongs_to :user, index: true
+
       t.timestamps
     end
   end

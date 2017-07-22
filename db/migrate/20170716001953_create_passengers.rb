@@ -12,6 +12,8 @@ class CreatePassengers < ActiveRecord::Migration[5.1]
       t.string :email
       t.integer :phone_number
 
+      t.belongs_to :user, index: true
+
       # t.belongs_to :trip, index: true
       # t.belongs_to :group, index: true
 

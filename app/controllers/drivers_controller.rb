@@ -1,11 +1,11 @@
 class DriversController < ApplicationController
   def index
     drivers = Driver.all
-    # if drivers
+    if drivers
       render json: drivers.as_json(only: [:id, :username, :first_name, :last_name, :home_address, :work_address, :email, :phone_number]), status: :ok
-    # else
-    #   render status: :not_found, json: { error: "Could not find a driver with id: #{driver.id}."}
-    # end
+    else
+      render status: :not_found, json: { error: "Could not find a driver with id: #{driver.id}."}
+    end
   end
 
   def create
@@ -43,6 +43,6 @@ class DriversController < ApplicationController
 
   private
   def driver_params
-    return params.require(:driver).permit(:username, :first_name, :last_name, :home_address, :home_zip_code, :work_address, :work_zip_code, :license_number, :email, :phone_number)
+    return params.require(:driver).permit(:username, :first_name, :last_name, :home_address, :home_zip_code, :work_address, :work_zip_code, :license_number, :email, :phone_number, :user_id)
   end
 end

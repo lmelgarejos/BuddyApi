@@ -1,12 +1,14 @@
 Rails.application.routes.draw do
+  resources :users
   resources :trips
+  resources :groups
 
   resources :cars do
     resources :trips
   end
 
   resources :passengers do
-    resources :trips
+    resources :groups
   end
 
   resources :drivers do

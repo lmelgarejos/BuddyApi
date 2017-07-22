@@ -6,7 +6,7 @@ class CreateTrips < ActiveRecord::Migration[5.0]
 
       t.belongs_to :driver, index: true
       t.belongs_to :car, index: true
-      t.belongs_to :passenger, index: true
+      # t.belongs_to :passenger, index: true
 
       t.timestamps
     end

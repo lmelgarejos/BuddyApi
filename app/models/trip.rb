@@ -2,9 +2,9 @@ class Trip < ApplicationRecord
   belongs_to :car
   belongs_to :driver
 
-  # has_many :groups, inverse_of: :trip
-  # has_many :passengers, through: :groups
-  belongs_to :passenger
+  has_many :groups#, inverse_of: :trip
+  has_many :passengers, through: :groups
+  # belongs_to :passenger
 
 
   # belongs_to :driver, through: :car, class_name: :user, foreign_key: :user_id

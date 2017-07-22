@@ -1,13 +1,12 @@
 class GroupsController < ApplicationController
   def index
     groups = Group.all
-    # if groups
+    if groups
       # render json: groups.as_json(only: [:username, :first_name, :last_name, :home_address, :work_address, :email, :phone_number]), status: :ok
       render json: groups.as_json(only: [:id, :trip_id, :passenger_id]), status: :ok
-
-    # else
-    #   render status: :not_found, json: { error: "Could not find a group with id: #{group.id}."}
-    # end
+    else
+      render status: :not_found, json: { error: "Could not find a group with id: #{group.id}."}
+    end
   end
 
   def create
@@ -24,7 +23,7 @@ class GroupsController < ApplicationController
     if group
       render json: group.as_json(), status: :ok
     else
-      render status: :not_found, json: { error: "Could not find this group!"}
+      render status: :not_found, json: { error: "Could not find this group"}
     end
   end
 

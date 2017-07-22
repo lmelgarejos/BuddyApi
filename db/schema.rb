@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170720110604) do
+ActiveRecord::Schema.define(version: 20170722015208) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,13 +35,19 @@ ActiveRecord::Schema.define(version: 20170720110604) do
     t.string "license_number"
     t.string "email"
     t.string "phone_number"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_drivers_on_user_id"
   end
 
   create_table "groups", force: :cascade do |t|
+    t.bigint "trip_id"
+    t.bigint "passenger_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["passenger_id"], name: "index_groups_on_passenger_id"
+    t.index ["trip_id"], name: "index_groups_on_trip_id"
   end
 
   create_table "passengers", force: :cascade do |t|
@@ -55,8 +61,10 @@ ActiveRecord::Schema.define(version: 20170720110604) do
     t.string "license_number"
     t.string "email"
     t.string "phone_number"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_passengers_on_user_id"
   end
 
   create_table "trips", id: :serial, force: :cascade do |t|
@@ -64,20 +72,15 @@ ActiveRecord::Schema.define(version: 20170720110604) do
     t.string "departure_time"
     t.integer "driver_id"
     t.integer "car_id"
-    t.integer "passenger_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["car_id"], name: "index_trips_on_car_id"
     t.index ["driver_id"], name: "index_trips_on_driver_id"
-    t.index ["passenger_id"], name: "index_trips_on_passenger_id"
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "provider"
-    t.string "uid"
-    t.string "name"
-    t.string "oauth_token"
-    t.datetime "oauth_expires_at"
+    t.string "login"
+    t.string "username"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

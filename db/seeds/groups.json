@@ -1,5 +1,6 @@
 [
   {
-    "id": 1
+    "trip_id": 1,
+    "passenger_id": 1
   }
 ]
