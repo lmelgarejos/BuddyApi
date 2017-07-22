@@ -3,18 +3,10 @@ Rails.application.routes.draw do
   resources :trips
   resources :groups
 
-  resources :cars do
-    resources :trips
-  end
+  resources :cars 
 
-  resources :passengers do
-    resources :groups
-  end
-
-  resources :drivers do
-    resources :trips
-    resources :cars
-  end
+  resources :passengers
+  resources :drivers
   # resources :drivers, only: [:index, :create, :destroy, :show]
 
   # get "cars", to: "cars#index", as: "cars"

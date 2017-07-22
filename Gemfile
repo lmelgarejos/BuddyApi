@@ -23,6 +23,9 @@ gem 'puma', '~> 3.7'
 # gem 'sqlite3'
 # gem 'pg'
 
+# Use Faraday as HTTP client
+gem 'faraday', '~> 0.11'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
