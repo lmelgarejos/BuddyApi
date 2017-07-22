@@ -1,9 +1,13 @@
 Rails.application.routes.draw do
+
+  get '/auth/github', to: 'authentication#github', format: false
+  get "/auth/github/callback", to: 'authentication#github', format: false
+
   resources :users
   resources :trips
   resources :groups
 
-  resources :cars 
+  resources :cars
 
   resources :passengers
   resources :drivers
