@@ -12,7 +12,7 @@ module TokiToki
   def self.decode(token)
     options = {
       iss: ENV['CLIENT_URL'],
-      verify_iss: true,
+      verify_iss: false,
       verify_iat: true,
       leeway: 30,
       algorithm: 'HS256'

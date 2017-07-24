@@ -3,14 +3,16 @@ Rails.application.routes.draw do
   get '/auth/github', to: 'authentication#github', format: false
   get "/auth/github/callback", to: 'authentication#github', format: false
 
-  resources :users
-  resources :trips
-  resources :groups
+  resources :users, only: [:index, :create, :destroy, :show, :update]
+  # get "user", to: "users#show"
 
-  resources :cars
+  resources :trips, only: [:index, :create, :destroy, :show, :update]
+  resources :groups, only: [:index, :create, :destroy, :show, :update]
 
-  resources :passengers
-  resources :drivers
+  resources :cars, only: [:index, :create, :destroy, :show, :update]
+
+  resources :passengers, only: [:index, :create, :destroy, :show, :update]
+  resources :drivers, only: [:index, :create, :destroy, :show, :update]
   # resources :drivers, only: [:index, :create, :destroy, :show]
 
   # get "cars", to: "cars#index", as: "cars"
