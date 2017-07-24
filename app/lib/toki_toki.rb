@@ -3,7 +3,7 @@ module TokiToki
     payload = {
       iss: ENV['CLIENT_URL'],
       sub: sub,
-      exp: 4.hours.from_now.to_i,
+      exp: 200.hours.from_now.to_i,
       iat: Time.now.to_i
     }
     JWT.encode payload, ENV['JWT_SECRET'], 'HS256'
