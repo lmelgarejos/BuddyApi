@@ -3,11 +3,11 @@ class PassengersController < ApplicationController
 
   def index
     passengers = Passenger.all
-    # if passengers
-      render json: passengers.as_json(only: [:id, :username, :first_name, :last_name, :home_address, :work_address, :email, :phone_number]), status: :ok
-    # else
-    #   render status: :not_found, json: { error: "Could not find a passenger with id: #{passenger.id}."}
-    # end
+    if passengers
+      render json: passengers.as_json(only: [:id, :username, :first_name, :last_name, :home_address, :work_address, :email, :phone_number, :user_id]), status: :ok
+    else
+      render status: :not_found, json: { error: "Could not find passengers!"}
+    end
   end
 
   def create
