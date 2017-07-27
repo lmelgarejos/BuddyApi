@@ -11,15 +11,15 @@ class DriversController < ApplicationController
   end
 
   def create
-    driver_params = driver_params.to_h
-    driver_params['user_id'] = @current_user.id
+    driver_parameters = driver_params.to_h
+    driver_parameters['user_id'] = @current_user.id
     puts "heeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
     # puts username
-    puts driver_params.inspect
+    puts driver_parameters.inspect
     puts "hooooooooooooooooooooo"
-    driver = Driver.new(driver_params)
+    driver = Driver.new(driver_parameters)
     if driver.save
-      render json: driver.as_json(), status: :ok
+      render json: driver.as_json(only: [:id, :username, :first_name, :last_name, :home_address, :work_address, :email, :phone_number, :user_id]), status: :ok
     else
       render status: :bad_request, json: { errors: driver.errors.messages }
     end
@@ -51,7 +51,7 @@ class DriversController < ApplicationController
 
   private
   def driver_params
-    # return params.require(:driver).permit(:username, :first_name, :last_name, :home_address, :home_zip_code, :work_address, :work_zip_code, :license_number, :email, :phone_number, :user_id)
-    return params.require(:driver).permit(:username, :user_id)
+    return params.require(:driver).permit(:username, :first_name, :last_name, :home_address, :home_zip_code, :work_address, :work_zip_code, :license_number, :email, :phone_number, :user_id)
+    # return params.require(:driver).permit(:username, :user_id)
   end
 end
