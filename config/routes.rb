@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  root 'users#index'
+
   get '/auth/github', to: 'authentication#github', format: false
   get "/auth/github/callback", to: 'authentication#github', format: false
 
